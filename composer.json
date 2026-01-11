@@ -1,0 +1,47 @@
+{
+    "name": "simon/integration",
+    "description": "Integration with SIMON monitoring system for TYPO3",
+    "type": "typo3-cms-extension",
+    "version": "1.0.0-dev",
+    "keywords": [
+        "typo3",
+        "cms",
+        "monitoring",
+        "simon",
+        "integration"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SIMON Team",
+            "email": "support@simon.example.com",
+            "homepage": "https://simon.example.com"
+        }
+    ],
+    "support": {
+        "email": "support@simon.example.com",
+        "issues": "https://github.com/your-org/simon/issues",
+        "source": "https://github.com/your-org/simon",
+        "docs": "https://github.com/your-org/simon/blob/main/modules/simon-typo3/README.md"
+    },
+    "require": {
+        "php": ">=8.1",
+        "typo3/cms-core": "^11.5 || ^12.0 || ^13.0 || ^14.0"
+    },
+    "suggest": {
+        "typo3/cms-scheduler": "For scheduled data submission (TYPO3 11.x only, use cron for 12.x+)"
+    },
+    "autoload": {
+        "psr-4": {
+            "Simon\\Integration\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "simon_integration"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
