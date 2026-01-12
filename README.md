@@ -6,8 +6,26 @@ TYPO3 extension for integrating with the SIMON monitoring system.
 
 ### Via Composer (Recommended)
 
+Add the repository to your `composer.json`:
+
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/c55tech/simon-typo3"
+    }
+  ],
+  "require": {
+    "simon/integration": "dev-main"
+  }
+}
+```
+
+Then install:
+
 ```bash
-composer require simon/integration
+composer require simon/integration:dev-main
 ```
 
 ### Manual Installation
