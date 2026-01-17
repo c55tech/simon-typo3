@@ -25,14 +25,17 @@ class SubmitDataTask extends AbstractTask
         $siteData = $dataCollector->collect();
         $baseUrl = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
 
-        $payload = [
+        $payload = array_merge([
             'client_id' => $this->clientId,
             'site_id' => $this->siteId,
-            'cms_type' => 'typo3',
-            'site_name' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] ?? 'TYPO3 Site',
-            'site_url' => $baseUrl,
-            'data' => $siteData,
-        ];
+            'auth_key' => $this->authKey,
+            'application_type' => 'typo3',
+            'site' => [
+                'name' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] ?? 'TYPO3 Site',
+                'url' => $baseUrl,
+                'application_type' => 'typo3',
+            ],
+        ], $siteData);
 
         return $apiClient->submit('intake', $payload);
     }
